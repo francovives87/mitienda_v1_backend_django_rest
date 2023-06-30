@@ -1,0 +1,38 @@
+from .base import *
+
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = False
+
+ALLOWED_HOSTS = ['127.0.0.1','localhost','mitienda.app','system.mitienda.app']
+
+# Database
+# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'NAME': 'mitienda',
+        'USER': 'mitienda_userdb',
+        'PASSWORD': '@Gamefox33336078',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
+
+##Email settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtpout.secureserver.net'
+EMAIL_HOST_USER = 'contacto@mitienda.app'
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+EMAIL_HOST_PASSWORD = '@Gamefox33336078'
+EMAIL_PORT = 465
+EMAIL_USE_SSL = False
+EMAIL_USE_TLS = True
+
+STATIC_URL = '/static/'
+MEDIA_URL = '/media_root/'
+
+STATICFILES_DIRS = [os.path.join( 'static')]
+MEDIA_ROOT = os.path.join('media_root')
+STATIC_ROOT = os.path.join('static_root')
